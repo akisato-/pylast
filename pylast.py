@@ -826,7 +826,7 @@ class _Request(object):
         (HOST_NAME, HOST_SUBDIR) = self.network.ws_server
         
         if self.network.is_proxy_enabled():
-            conn = HTTPConnection(host = self._get_proxy()[0], port = self._get_proxy()[1])
+            conn = HTTPConnection(host = self.network_get_proxy()[0], port = self._get_proxy()[1])
             
             try:
                 conn.request(method='POST', url="http://" + HOST_NAME + HOST_SUBDIR, 
